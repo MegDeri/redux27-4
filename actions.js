@@ -30,24 +30,22 @@ function removeComment(id) {
     }
 };
 
-function thumbUp(likes) {
+function thumbUp(id) {
     return {
         type: THUMB_UP_COMMENT,
-        id,
-        likes: likes++
+        id
     }
 };
 
-function thumbDown(dislikes) {
+function thumbDown(id) {
     return {
         type: THUMB_DOWN_COMMENT,
-        id,
-        dislikes: dislikes++
+        id
     }
 };
 
 const boundAddComment = text => dispatch(addComment(text));
 const boundEditComment = (text, id) => dispatch(editComment(text, id));
 const boundRemoveComment = id => dispatch(removeComment(id));
-const boundthumbUp = (likes, id) => dispatch(thumbUp(likes, id));
-const boundthumbDown = (dislikes, id) => dispatch(thumbDown(dislikes, id));
+const boundthumbUp = (id) => dispatch(thumbUp(id));
+const boundthumbDown = (id) => dispatch(thumbDown(id));
